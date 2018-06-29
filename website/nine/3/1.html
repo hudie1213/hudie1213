@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>中也互联科技</title>
+		<link rel="icon" href="../../favicon.ico">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../1/css/basic.css" />
+		<link rel="stylesheet" href="../1/css/swiper.css" />
+		<link rel="stylesheet" href="../1/css/swiper.min.css" />
+		<script src="js/basic.js" type="text/javascript" charset="utf-8"></script>
+		 <style>
+    body {
+      background: #fff;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+    }
+    .swiper-container {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 200px;
+      height: 400px;
+
+    }
+    .swiper-slide img {
+      display: inline-block;
+      width:200px;
+      height:400px;
+    }
+  </style>
+	
+	</head>
+
+	<body>
+		<header>
+			<div class="top flexbasic">
+				<div class="logo"><img src="../../statics/images/website/logo.jpg" /></div>
+				<nav class="nav flexbasic">
+						<a href="../../../website/index.html">首页</a>
+						<a href="../../../website/index.php?m=content&c=index&a=lists&catid=6">案例</a>
+						<a href="../../../website/index.php?m=content&c=index&a=lists&catid=7">小程序加盟</a>
+						<a href="../../../website/index.php?m=content&c=index&a=lists&catid=8">小程序资讯</a>
+						<a href="../../../website/index.php?m=content&c=index&a=lists&catid=9">关于我们</a>
+				</nav>
+				<div class="login none">
+					<a href="">登录</a>
+					<a href="">注册</a>
+				</div>
+			</div>
+		</header>
+		<div class="main">
+			<ul>
+				<li>
+					<img src="images/9.png" width="50%" alt="" />
+					<h3>店铺展示</h3>
+				</li>
+				<li>
+					<img src="images/10.png" width="50%" alt="" />
+					<h3>定位导航</h3>
+				</li>
+				<li>
+					<img src="images/11.png" width="50%" alt="" />
+					<h3>商家入驻门店</h3>
+				</li>
+				<li>
+					<img src="images/12.png" width="50%" alt="" />
+					<h3>热点资讯</h3>
+				</li>
+			</ul>
+		</div>
+		<div class="swiper-container">
+  <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/11.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images/12.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images/13.jpg" alt=""></div>
+     
+      
+    </div>
+  <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
+</div>
+
+  <!-- Swiper JS -->
+  <script src="js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows : true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+		<footer>
+			<div class="zhong">
+				<ul>
+					<li>关于我们</li>
+					<li><a href="../../../website/index.php?m=content&c=index&a=lists&catid=9">公司简介</a></li>
+					<li><a href="../../../website/index.php?m=content&c=index&a=lists&catid=8">公司活动</a></li>
+					<li><a href="../../../website/index.php?m=content&c=index&a=lists&catid=7">服务咨询</a></li>
+				</ul>
+				<ul>
+					<li>联系我们</li>
+					<li>业务咨询：400-0130-696</li>
+					<li>招商咨询：13911811915（微信同号）</li>
+					<li>周一至周六 8:30-18:00</li>
+					<li>公司地址： 北京市昌平区中关村科技园超前路23号C区258室</li>
+				</ul>
+				<p style="clear: both;"></p>
+				<div class="erwei">
+					<div>
+						<img src="../../statics/images/website/jingli.png" />
+						<h3>公司公众号</h3>
+					</div>
+					<div>
+						<img src="../../statics/images/website/jingli2.png" />
+						<h3>经理微信号</h3>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+	
+</html>

@@ -1,0 +1,26 @@
+<div class="panel">
+    <p class="barguan">关闭</p>
+    <ul>
+        <li>
+            <a href="index.html">首页</a>
+        </li>
+        {pc:content action="category" num="4" order="listorder DESC"}
+        {loop $data $val}<li>
+        <li>
+            <a href="{$val['url']}">{$val['catname']}</a>
+        </li>
+        {/loop}
+        {/pc}
+    </ul>
+</div>
+
+<div class="wapheader">
+    <div class="waplogo">
+        <a href="index.html">
+            <img src="{IMG_PATH}website/waplogo.png">
+        </a>
+    </div>
+    <div class="wapbar">
+        <img src="{IMG_PATH}website/bar.png">
+    </div>
+</div>

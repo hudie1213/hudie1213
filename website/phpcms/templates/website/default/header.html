@@ -1,0 +1,21 @@
+<header>
+    <div class="top flexbasic">
+        <div class="logo"><img src="{IMG_PATH}website/logo.jpg" /></div>
+        <nav class="nav">
+            <a href="index.html">首页</a>
+            <!--<a href="anli.html">案例</a>-->
+            <!--<a href="jiameng.html">小程序加盟</a>-->
+            <!--<a href="zixun.html">小程序资讯</a>-->
+            <!--<a href="about.html">关于我们</a>-->
+            {pc:content action="category" num="4" order="listorder DESC"}
+            {loop $data $val}
+            <a href="{$val['url']}">{$val['catname']}</a>
+            {/loop}
+            {/pc}
+        </nav>
+        <div class="login none">
+            <a href="">登录</a>
+            <a href="">注册</a>
+        </div>
+    </div>
+</header>

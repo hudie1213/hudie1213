@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="Keywords" content="小程序,微信小程序,小程序制作,微信小程序制作,小程序工具,微信小程序工具,小程序开发,微信小程序开发,小程序平台,微信小程序平台" />
+		<meta name="Description" content="【中也科技】是一家领先微信小程序开发企业,为中小企业提供微商城、新零售、餐饮o2o、小程序等一体化解决方案,帮助中小型企业向智能商业转型升级。" />
+		<title>中也科技资讯</title>
+		<link rel="icon" href="../../../../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}website/basic.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}website/banner.css" />
+		<script src="{JS_PATH}website/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="{JS_PATH}website/basic.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			@media screen and (min-width: 760px) {
+				.pc{
+					display: block;
+				}
+				.wap{
+					display: none;
+				}
+			}
+			@media screen and (max-width: 759px) {
+				.pc{
+					display: none;
+				}
+				.wap{
+					display: block;
+				}
+			}
+		</style>
+	</head>
+	<body>		
+	<div class="pc">
+		{template 'default','header'}
+		<script type="text/javascript">
+			var headerTop = $(".top").height();
+			var logoImg = $(".logo img").height();
+			var logoImgmt = ($(".top").height() - $(".logo img").height()) / 2;
+ $(".logo img").css("margin-top", logoImgmt)
+		</script>
+		
+		<div class="zixuncontent">
+			<ul class="longlist">
+				{pc:content  action="lists" catid="8" order="id DESC" page="$page" num="7" moreinfo="1"}
+				<!--<pre>{print_r($data)}</pre>-->
+				{loop $data $v}
+				{php list($copyfrom) = explode('|', $v['copyfrom'])}
+				<li><a href="{$v['url']}">
+				  <div class="longliimg">
+				  	<img src="{$v['thumb']}" alt="" />
+				  </div>
+				  <div class="longlicon">
+				  	<h1>{$v['title']}</h1>
+				  	<p>{$v['description']}</p>
+				  	<h2>{$copyfrom}<span style="margin-left: 20px;">{date('Y-m-d',$v['inputtime'])}</span></h2>
+				  </div>
+				</a></li>
+				{/loop}
+				{/pc}
+				{$pages}
+			</ul>
+			<div class="shortlist">
+				<ul>
+					<h1>最新资讯</h1>
+					{pc:content  action="lists" catid="8" order="id DESC" num="1"}
+					{loop $data $v}
+					<li><h2>{$v['title']}</h2>
+						<a href="{$v['url']}">
+
+							<div class="shortshow">
+								<div class="shortimg">
+									<img src="{$v['thumb']}"/>
+								</div>
+								<div class="shortcon">
+									<p>{$v['description']}</p>
+								</div>
+							</div>
+						</a></li>
+					{/loop}
+					{/pc}
+					{pc:content  action="lists" catid="8" order="id DESC" num="2" start="1"}
+					{loop $data $v}
+					<li><a href="{$v['url']}">{$v['title']}</a></li>
+					{/loop}
+					{/pc}
+				</ul>
+				<ul>
+					<h1>最热资讯</h1>
+					{pc:content  action="lists" catid="8" order="id ASC" num="1"}
+					{loop $data $v}
+					<li><h2>{$v['title']}</h2>
+						<a href="{$v['url']}">
+
+							<div class="shortshow">
+								<div class="shortimg">
+									<img src="{$v['thumb']}"/>
+								</div>
+								<div class="shortcon">
+									<p>{$v['description']}</p>
+								</div>
+							</div>
+						</a></li>
+					{/loop}
+					{/pc}
+					{pc:content  action="lists" catid="8" order="id ASC" num="2" start="1"}
+					{loop $data $v}
+					<li><a href="{$v['url']}">{$v['title']}</a></li>
+					{/loop}
+					{/pc}
+				</ul>
+			
+		</div>
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+			var longliwei=$(".longlist li").width();
+			var longimgwei=$(".longliimg").width();
+			$(".longlicon").width()=longliwei-longimgwei;
+			
+			}
+		</script>
+		{template 'default','footer'}
+</div>
+	<div class="wap">
+		{template 'default','header_1'}
+		<script type="text/javascript">
+			window.onload = function () {
+				var waphei = $(window).height();
+				var wapwei = $(window).width();
+				$(".panel").css("height", waphei);
+				$(".panel").css("width", 0.4 * wapwei);
+				$(".panel").css("right",-0.4*wapwei);
+				$(".wapbar").click(function () {
+					$(".panel").css("display","block")
+					$(".panel").animate({
+						"right": "0"
+					})
+				})
+				$(".barguan").click(function(){
+					$(".panel").animate({
+						"right": -0.4*wapwei
+					})
+				})
+				$(".panel li a").css("height",0.1*waphei);
+				$(".panel li a").css("lineHeight",0.1*waphei+"px")
+			}
+		</script>
+		<div class="wapzicon" style="margin-top: 50px;">
+			{pc:content  action="lists" catid="8" order="id DESC" page="$page" num="7" moreinfo="1"}
+			<!--<pre>{print_r($data)}</pre>-->
+			{loop $data $v}
+			{php list($copyfrom) = explode('|', $v['copyfrom'])}
+			<div class="zhu">
+				<a href="{$v['url']}">
+				<div class="left">
+					<p>{$v['title']}</p>
+					<span>{$copyfrom} &ensp;|&ensp;{date('Y-m-d',$v['inputtime'])}</span>
+				</div>
+				<div class="right">
+					<img src="{$v['thumb']}" style="height:100px;" />
+				</div>
+				</a>
+			</div>
+			{/loop}
+			{/pc}
+			{$pages}
+			{template 'default','footer_1'}
+	</div>
+	</body>
+</html>

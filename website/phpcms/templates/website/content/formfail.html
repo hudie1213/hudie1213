@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>中也科技小程序官网</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="{CSS_PATH}website/basic.css">
+		<link rel="stylesheet" href="{CSS_PATH}website/jiameng.css" />
+		<link rel="stylesheet" href="{CSS_PATH}website/banner.css" />
+		<script src="{JS_PATH}website/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="{JS_PATH}website/basic.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			@media screen and (min-width: 760px) {
+				.pc{
+					display: block;
+				}
+				.wap{
+					display: none;
+				}
+			}
+			@media screen and (max-width: 759px) {
+				.pc{
+					display: none;
+				}
+				.wap{
+					display: block;
+				}
+			}
+		</style>
+		<style>
+			.suc{
+				width: 600px;
+				height: 350px;
+				background: #ccc;
+				margin: 100px auto 0;
+				position: relative;
+				padding-top: 50px;
+			}
+			.suc h1{
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				font-size: 24px;
+			}
+			.suc p{
+				width: 100%;
+				margin-top: 50px;
+				font-size: 18px;
+				text-align: center;
+			}
+			.suc a{
+				display: block;
+				left: 50%;
+				margin-left: -60px;
+				text-align:center;
+				position: absolute;
+				bottom: 50px ;
+				width: 120px;
+				height: 45px;
+				line-height: 45px;
+				font-size: 20px;
+				transition: 0.2s;
+			}
+			.suc a:hover{
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+
+	<body>
+	{template 'default','header'}
+		<script type="text/javascript">
+			var headerTop = $(".top").height();
+			var logoImg = $(".logo img").height();
+			var logoImgmt = ($(".top").height() - $(".logo img").height()) / 2;
+			$(".logo img").css("margin-top", logoImgmt)
+		</script>
+		
+		<div style="width: 100%;height: 600px;">
+			<div class="suc">
+				<h1>提交失败</h1>
+				<p>请您重新提交信息</p>
+				<a href="index.html">返回首页</a>
+			</div>
+		</div>
+	{template 'default','footer'}
+			</body>
+		
+		</html>
+		
